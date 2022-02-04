@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyGet" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/mygrey</item>
+        <item name="colorPrimaryVariant">@color/mygrey</item>
+        <item name="colorOnPrimary">@color/mygrey</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mygrey</item>
+        <item name="colorSecondaryVariant">@color/mygrey</item>
+        <item name="colorOnSecondary">@color/mygrey</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/inria_sans_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

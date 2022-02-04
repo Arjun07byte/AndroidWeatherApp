@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">GetWeather</string>
+    <string name="cityName">CITY_NAME</string>
+    <string name="currTemp">12</string>
+    <string name="tempType">°C</string>
+    <string name="currWeather">Fog</string>
+    <string name="currMinMax">CURR_MAX</string>
+    <string name="currentAqi">CURR_AQI</string>
+    <string name="todayDate">TODAY_DATE</string>
+    <string name="headingToday">Today</string>
+    <string name="weatherDescHeading">Weather Desc.</string>
+    <string name="cloudsHeading">Cloudiness</string>
+    <string name="weatherDescVal">TOMM_MIN</string>
+    <string name="cloudsText">Clouds%</string>
+    <string name="humidityHeading">Humidity</string>
+    <string name="airPressHeading">Air Pressure</string>
+    <string name="aqiHeading">AQI Rating</string>
+    <string name="visibilityHeading">Visibility</string>
+    <string name="windSpeed">Windspeed</string>
+    <string name="airPressVal">AIR_PRESSURE</string>
+    <string name="humidityVal">HUMIDITY</string>
+    <string name="visibilityVal">SUNRISE/SUNSET</string>
+    <string name="windspeedVal">WINDSPEED</string>
+</resources>

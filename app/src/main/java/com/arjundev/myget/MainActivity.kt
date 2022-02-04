@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var myFusedLocation: FusedLocationProviderClient
     private val myRQCODE = 1010
-    private val myAPIKEY = "45b201de86bb9f899ffcb8c6c0b27bbd"
+    private val myAPIKEY = "Your OpenWeather API KEY"
     private lateinit var mainBackground: LinearLayout
     private lateinit var myIcon: LottieAnimationView
 

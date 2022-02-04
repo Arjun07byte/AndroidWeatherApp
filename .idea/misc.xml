@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ALL_ANDROID_PROJECTS/myGet/app/src/main/res/drawable/clouds_bg.xml" value="0.1825" />
-        <entry key="..\:/ALL_ANDROID_PROJECTS/myGet/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/ALL_ANDROID_PROJECTS/myGet/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/ALL_ANDROID_PROJECTS/myGet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1825" />
+        <entry key="..\:/ALL_ANDROID_PROJECTS/myGet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1825" />
       </map>
     </option>
   </component>

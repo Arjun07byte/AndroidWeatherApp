@@ -8,7 +8,6 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
-import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -179,7 +178,7 @@ class MainActivity : AppCompatActivity() {
                         task->
                     val myLocation: Location?=task.result
                     if(myLocation==null){
-                        getNewLocationPointers()
+                        Toast.makeText(this,"Please Enable GPS Location",Toast.LENGTH_SHORT).show()
                     }else{
                         getWeatherDetails(myLocation.longitude.toString(),myLocation.latitude.toString())
                     }
@@ -230,31 +229,6 @@ class MainActivity : AppCompatActivity() {
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
 
-    // function to get new Location Co-ordinates
-    // if somehow play services are restarted or all the other cases
-    // like turning on the airplane modes etc.
-    @SuppressLint("MissingPermission")
-    private fun getNewLocationPointers(){
-        val newLocationRequest = LocationRequest.create()
-        newLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-        newLocationRequest.interval = 5
-        newLocationRequest.fastestInterval = 0
-        newLocationRequest.numUpdates = 0
-        myFusedLocation = LocationServices.getFusedLocationProviderClient(this)
-        Looper.myLooper()?.let {
-            myFusedLocation.requestLocationUpdates(newLocationRequest,locationCallBack,
-                it
-            )
-        }
-    }
 
-    // calling the locationCallBack to get new locations with
-    // help of fusedlocationUpdates from Play Services
-    private val locationCallBack = object :LocationCallback(){
-        override fun onLocationResult(p0: LocationResult) {
-            val lastLocation:Location = p0.lastLocation
-            getWeatherDetails(lastLocation.longitude.toString(),lastLocation.latitude.toString())
-        }
-    }
 
 }

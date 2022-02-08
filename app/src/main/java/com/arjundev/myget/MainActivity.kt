@@ -8,6 +8,7 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var myFusedLocation: FusedLocationProviderClient
     private val myRQCODE = 1010
-    private val myAPIKEY = "Your OpenWeather API KEY"
+    private val myAPIKEY = "45b201de86bb9f899ffcb8c6c0b27bbd"
     private lateinit var mainBackground: LinearLayout
     private lateinit var myIcon: LottieAnimationView
 
@@ -178,7 +179,7 @@ class MainActivity : AppCompatActivity() {
                         task->
                     val myLocation: Location?=task.result
                     if(myLocation==null){
-                        Toast.makeText(this,"Please Enable GPS Location",Toast.LENGTH_SHORT).show()
+                        getNewLocation()
                     }else{
                         getWeatherDetails(myLocation.longitude.toString(),myLocation.latitude.toString())
                     }
@@ -229,6 +230,27 @@ class MainActivity : AppCompatActivity() {
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
 
+    @SuppressLint("MissingPermission")
+    private fun getNewLocation(){
+
+         val locationRequest = LocationRequest.create().apply {
+            interval = 10000
+            fastestInterval = 5000
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        }
 
 
+        myFusedLocation.requestLocationUpdates(locationRequest,
+            locationCallback,
+            Looper.getMainLooper())
+
+    }
+
+    private val locationCallback = object : LocationCallback() {
+        override fun onLocationResult(p0: LocationResult) {
+            for (location in p0.locations){
+                getWeatherDetails(location.longitude.toString(),location.latitude.toString())
+            }
+        }
+    }
 }
